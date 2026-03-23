@@ -1,8 +1,9 @@
 1. What makes a model "linear"? "Linear" in what?
 
-A model is linear if its parameters aren't exponents or 
-multiplied/divided by another parameter and its predictor 
-variables appear only in the first power. 
+A model is linear if the coefficients/parameters are added together 
+and not raised to a power, multiplied, or divided with each other.
+Even though the predictor variables may be transformed, the model 
+can be linear in its coefficients. 
 
 2. How do you interpret the coefficient for a dummy/one-hot-encoded variable? 
 (This is a trick question, and the trick involves how you handle the intercept of the model.) 
