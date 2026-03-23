@@ -1,0 +1,43 @@
+1. What makes a model "linear"? "Linear" in what?
+
+A model is linear if its parameters aren't exponents or 
+multiplied/divided by another parameter and its predictor 
+variables appear only in the first power. 
+
+2. How do you interpret the coefficient for a dummy/one-hot-encoded variable? 
+(This is a trick question, and the trick involves how you handle the intercept of the model.) 
+There's further explanation at the end of this document, if needed.
+
+drop_first=True argument is added when one-hot-encoding to build a model with an intercept which drops 
+one of the categories to remove redundancy as one variable can be inferred or predicted by the other variables. 
+This allows the model to estimate the coefficients properly instead of incorporating redundant information. 
+The column that was dropped becomes the baseline categroy, making the intercept to be the average of that dropped column. 
+The coefficient for a dummy/one-hot-encoded variable is the difference between each average of the categories
+and the baseline category. 
+
+3. Can linear regression be used for classification? Explain why, or why not.
+
+Linear regression cannot be used for classification because linear regression predicts continuous variables 
+while classification requires discrete class labels. 
+
+4. If you have a high accuracy on training but low on testing, what might be the problem? 
+It also might be you see a pattern in the residuals.
+
+The problem is overfitting. The model learns the training data too well which makes it 
+diffcult to generalize to new data.
+
+5. Review this page: Non-Linear with Linear. What are two ways to incorporate nonlinear relationships between your 
+target/response/dependent/outcome variable y and your features/control/response/independent variables x?
+
+The two ways to incorporate nonlinear relationships between the target and feature variables is by using 
+a DecisionTreeRegressor and PolynomialFeatures from the scikit learn package. The DecisionTreeRegressor object
+directly shows the nonlinear relationship, while PolynomialFeatures is used to create a new matrix with polynomial 
+terms that can be applied to the LinearRegression object. 
+
+6. What is the interpretation of the intercept? A slope coefficient for a variable? The coefficient for a dummy/one-hot-encoded variable?
+
+The intercept is the expected/average value of the target variable when the feature variables are 0. 
+The slope coefficient for a variable is the change in the target variable for a unit increase in one feature variable when 
+holding other variables constant. 
+The coefficient for a dummy/one-hot-encoded variable is the difference between each average of the categories
+and the baseline category. 
